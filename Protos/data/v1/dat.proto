@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package data.v1;
+
+message PushRequest {
+  bytes data = 1;
+}
+
+message PushResponse {
+  int32 queue_length = 1;
+}
+
+service DataService {
+  rpc Push(PushRequest) returns (PushResponse);
+}
